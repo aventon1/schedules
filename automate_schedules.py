@@ -21,8 +21,14 @@ if __name__ == '__main__':
 
         for csv_row in csv_reader:
 
-            # TODO: Only insert specific columns
-            # TODO: Get header data
-            ws.append(csv_row)
+            # Insert only these values into rows
+            patient_appointment = [csv_row['AppointmentTime'],
+                                   csv_row['Patient'],
+                                   csv_row['Comments'],
+                                   csv_row['PatientEmailAddress'],
+                                   csv_row['AppointmentTypeName'],
+                                   csv_row['Carrier'],
+                                   csv_row['Provider']]
+            ws.append(patient_appointment)
 
     wb.save(filename='Schedule.xlsx')
