@@ -1,5 +1,18 @@
 import csv
 from openpyxl import Workbook
+import re
+
+
+def get_provider(provider_string):
+
+    provider_match = re.search(r'^P.+(,\s)', provider_string)
+
+    if provider_match:
+        provider_name = provider_match.group(0)
+    else:
+        provider_name = provider_string
+
+    return provider_name
 
 
 if __name__ == '__main__':
@@ -29,7 +42,7 @@ if __name__ == '__main__':
 
             # Capture header data
             if iteration == 0:
-                provider_name = csv_row['Textbox9']
+                provider_name = get_provider(csv_row['Textbox9'])
                 date_range = csv_row['textbox29']
                 practice_name = csv_row['PracticeName']
                 iteration += 1
