@@ -31,4 +31,5 @@ if __name__ == '__main__':
                                    csv_row['Provider']]
             ws.append(patient_appointment)
 
+
     wb.save(filename='Schedule.xlsx')
