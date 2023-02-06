@@ -65,7 +65,11 @@ def get_provider(provider_string):
 
 # TODO: Formatting and styles
 def apply_styles():
+    pass
 
+# TODO: print settings
+def apply_print_settings():
+    pass
 
 if __name__ == '__main__':
 
@@ -80,6 +84,7 @@ if __name__ == '__main__':
     ws, provider_name, date_range, practice_name = write_csv_to_xlsx(csv_filename, ws)
 
     # TODO: Formatting and styles
+    # TODO: print settings
 
 
     wb.save(filename='Schedule.xlsx')
