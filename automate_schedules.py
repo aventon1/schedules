@@ -5,6 +5,8 @@ import re
 
 def get_provider(provider_string):
 
+    provider_name = ""
+
     provider_match = re.search(r'^P.+(,\s)', provider_string)
 
     if provider_match:
