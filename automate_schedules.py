@@ -47,7 +47,12 @@ def write_csv_to_xlsx(csv_filename, ws):
 
 
 def get_provider(provider_string):
+    """
+    Helper function to get substring from given string
 
+    :param provider_string: Str that contains provider name
+    :return: provider_name
+    """
 
     provider_match = re.search(r'^P.+(,\s)', provider_string)
 
