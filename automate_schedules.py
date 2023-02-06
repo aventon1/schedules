@@ -19,7 +19,20 @@ if __name__ == '__main__':
         # Add csv data to a dictionary
         csv_reader = csv.DictReader(csv_file)
 
+        # Variables to get specific header data
+        provider_name = ''
+        date_range = ''
+        practice_name = ''
+        iteration = 0
+
         for csv_row in csv_reader:
+
+            # Capture header data
+            if iteration == 0:
+                provider_name = csv_row['Textbox9']
+                date_range = csv_row['textbox29']
+                practice_name = csv_row['PracticeName']
+                iteration += 1
 
             # Insert only these values into rows
             patient_appointment = [csv_row['AppointmentTime'],
@@ -30,6 +43,5 @@ if __name__ == '__main__':
                                    csv_row['Carrier'],
                                    csv_row['Provider']]
             ws.append(patient_appointment)
-
 
     wb.save(filename='Schedule.xlsx')
