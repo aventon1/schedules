@@ -4,7 +4,13 @@ import re
 
 
 def write_csv_to_xlsx(csv_filename, ws):
+    """
+    Write csv file to xlsx file with specified columns and rows
 
+    :param csv_filename: Str of name of csv file
+    :param ws: Workbook xlsx object
+    :return: ws, provider_name, date_range, practice_name
+    """
 
     # Write csv data to excel files
     # TODO: Check encoding
